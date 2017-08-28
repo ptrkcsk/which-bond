@@ -1,23 +1,42 @@
 #!/usr/bin/env node
 
-const dotenv  = require('dotenv').config()
-const random  = require('lodash.random')
-const request = require('request')
+const {projectVersion, wordWrapOptions} = require('./bond_modules/constants')
+const coerceBondOption                  = require('./bond_modules/program/coerce-bond-option')
+const getRandomFilm                     = require('./bond_modules/get-random-film')
+const program                           = require('commander')
+const wordWrap                          = require('word-wrap')
 
-/** @see {@link https://www.themoviedb.org/collection/645-james-bond-collection} */
-const bondCollectionId = 645
+program
+  .version(projectVersion)
+  .option(
+    '-b, --include-bonds [actors]',
+    'Include one or more Bond actors, by last name. Examples: `-b lazenby`, `-b connery,moore`. Defaults to `all`',
+    'all',
+  )
+  .option(
+    '-B, --exclude-bonds [actors]',
+    'Exclude one or more Bond actors, by last name. Examples: `-B brosnan`, `-B brosnan,niven`. Defaults to `none`',
+    'none',
+  )
+  .parse(process.argv)
 
-request.get({
-  uri: 'https://api.themoviedb.org/3/collection/' + bondCollectionId,
-  qs : {
-    api_key: process.env.TMDB_API_KEY,
-  },
-}, (error, response, body) => {
-  body = JSON.parse(body)
-  if (response.statusCode === 200) {
-    const bondFilms = body.parts
-    console.log(bondFilms[random(bondFilms.length - 1)].original_title)
-  } else {
-    console.error(body ? body.status_message : response.statusMessage)
-  }
+// Commander doesn't call the coercion function if using the default option value
+program.includeBonds = coerceBondOption(program.includeBonds)
+program.excludeBonds = coerceBondOption(program.excludeBonds)
+
+getRandomFilm({
+  includeBonds: program.includeBonds,
+  excludeBonds: program.excludeBonds,
+}, film => {
+  const bondActor = wordWrap(`Starring ${film.bondActor} as James Bond`, wordWrapOptions)
+  const overview  = wordWrap(film.overview, wordWrapOptions)
+  const title     = wordWrap(film.title, wordWrapOptions)
+
+  console.log(`
+${title}
+
+${bondActor}
+
+${overview}
+`)
 })
