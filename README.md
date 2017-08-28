@@ -52,7 +52,7 @@ $ npm install --global which-bond
 $ which-bond
 ```
 
-ℹ️ NOTE: The first time you run `which-bond`, it will download the Bond film data from TMDb and cache it on your computer. It may take around 30 seconds to complete the download, but after that `which-bond` will be very fast. Don't worry, it's not downloading a ton of data, it's just spacing out requests to TMDb so as not to go over their [request rate limit](https://developers.themoviedb.org/3/getting-started/request-rate-limiting). You can look at the database yourself when it's finished. It's just a JSON file called `.db.json`.
+ℹ️ NOTE: The first time you run `which-bond`, it will download the Bond film data from TMDb and cache it on your computer. It may take around 30 seconds to complete the download, but after that `which-bond` will be very fast. Don’t worry, it’s not downloading a ton of data, it’s just spacing out requests to TMDb so as not to go over their [request rate limit](https://developers.themoviedb.org/3/getting-started/request-rate-limiting). You can look at the database yourself when it’s finished. It’s just a JSON file called `.db.json`.
 
 ### Options
 

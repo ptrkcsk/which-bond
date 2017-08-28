@@ -1,6 +1,6 @@
 {
   "name"        : "which-bond",
-  "version"     : "0.2.1",
+  "version"     : "0.2.2",
   "description" : "Randomly choose a Bond film to watch",
   "keywords"    : [
     "Bond",
