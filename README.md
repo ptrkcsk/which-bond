@@ -71,6 +71,6 @@ $ which-bond
 
 ## Acknowledgments
 
-<a href='https://www.themoviedb.org/'><img src='./assets/images/powered-by-tmdb.svg' height='50'></a>
+<a href='https://www.themoviedb.org/'><img src='./assets/images/powered-by-tmdb.png' height='75'></a>
 
 `which-bond` uses the [TMDb API](https://www.themoviedb.org/documentation/api) but is not endorsed or certified by TMDb.
