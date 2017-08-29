@@ -21,24 +21,13 @@ $ which-bond
 
 ---
 
-## How to use `which-bond` if you’re familiar with Node.js and npm
+## How to use `which-bond`
 
 ### [Install Node.js and npm](https://docs.npmjs.com/getting-started/installing-node)
 
 ### [Get a TMDb API key](https://developers.themoviedb.org/3/getting-started)
 
-### Add your TMDb API key to `which-bond`
-
-- Make a copy of `.env.example` and call it `.env`
-- Add your TMDb API key to `.env`. (Leave `.env.example` alone.) `.env` should now look like this:
-
-```
-TMDB_API_KEY=XXXXXXX 👈 Put your API key here
-```
-
-*[(Learn about dotenv)](https://github.com/motdotla/dotenv)*
-
-- Install `which-bond`:
+### Install `which-bond`
 
 ```
 $ npm install --global which-bond
@@ -46,15 +35,17 @@ $ npm install --global which-bond
 
 *(`which-bond` is a command line tool, hence the [`--global` install](https://docs.npmjs.com/getting-started/installing-npm-packages-globally))*
 
-- Run `which-bond`:
+### Run `which-bond`
 
 ```
 $ which-bond
 ```
 
-ℹ️ NOTE: The first time you run `which-bond`, it will download the Bond film data from TMDb and cache it on your computer. It may take around 30 seconds to complete the download, but after that `which-bond` will be very fast. Don’t worry, it’s not downloading a ton of data, it’s just spacing out requests to TMDb so as not to go over their [request rate limit](https://developers.themoviedb.org/3/getting-started/request-rate-limiting). You can look at the database yourself when it’s finished. It’s just a JSON file called `.db.json`.
+ℹ️ NOTE: The first time you run `which-bond`, it will download the Bond film data from TMDb and cache it on your computer. The download may take around 30 seconds to complete, but after that `which-bond` will be very fast. Don’t worry, it’s not downloading a ton of data, it’s just spacing out requests to TMDb so as not to go over their [request rate limit](https://developers.themoviedb.org/3/getting-started/request-rate-limiting). You can look at the database yourself when it’s finished. It’s just a JSON file called `.db.json`.
 
-### Options
+---
+
+## Options
 
 `which-bond` supports the following command line options:
 
@@ -62,10 +53,6 @@ $ which-bond
 |---|---|---|---|
 |`-b` or `--include-bonds`|The last name of a single Bond actor or a comma-separated list of last names|- `which-bond -b lazenby`<br>- `which-bond -b connery,moore`|Only choose from films in which Bond was played by one of the specified actors|
 |`-B` or `--exclude-bonds`|The last name of a single Bond actor or a comma-separated list of last names|- `which-bond -B brosnan`|Exclude films in which Bond was played by one of the specified actors|
-
-## How to use `which-bond` if you’re *not* familiar with Node.js and/or npm
-
-*(Coming soon)*
 
 ---
 

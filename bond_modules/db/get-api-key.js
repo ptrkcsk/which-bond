@@ -4,6 +4,5 @@ module.exports = () => {
   const FileSync = require('lowdb/adapters/FileSync')
 
   const db = low(new FileSync(dbPath))
-
-  return db.get('films', []).value()
+  return db.get('tmdbApiKey').value()
 }

@@ -1,3 +1,4 @@
 module.exports = (value) => {
-  return ['all', 'none'].includes(value) ? [] : value.split(',')
+  const defaults = ['all', 'none']
+  return defaults.includes(value) ? [] : value.split(',')
 }

@@ -1,22 +1,22 @@
 {
-  "name"        : "which-bond",
-  "version"     : "0.2.2",
-  "description" : "Randomly choose a Bond film to watch",
-  "keywords"    : [
+  "name": "which-bond",
+  "version": "0.3.0",
+  "description": "Randomly choose a Bond film to watch",
+  "keywords": [
     "Bond",
     "James Bond"
   ],
-  "bin"         : "./index.js",
-  "repository"  : "ptrkcsk/which-bond",
-  "author"      : "Patrik Csak <patrik@csak.email>",
-  "license"     : "MIT",
+  "bin": "./index.js",
+  "repository": "ptrkcsk/which-bond",
+  "author": "Patrik Csak <patrik@csak.email>",
+  "license": "MIT",
   "dependencies": {
-    "commander"       : "^2.11.0",
-    "dotenv"          : "^4.0.0",
-    "lodash.camelcase": "^4.3.0",
-    "lodash.random"   : "^3.2.0",
-    "lowdb"           : "^0.17.2",
-    "request"         : "^2.81.0",
-    "word-wrap"       : "^1.2.3"
+    "commander": "^2.11.0",
+    "lodash.random": "^3.2.0",
+    "lowdb": "^0.17.2",
+    "word-wrap": "^1.2.3"
+  },
+  "devDependencies": {
+    "standard": "^10.0.3"
   }
 }
