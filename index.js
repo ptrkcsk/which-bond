@@ -2,6 +2,7 @@
 
 const {projectVersion, wordWrapOptions} = require('./bond_modules/constants')
 const coerceBondOption = require('./bond_modules/program/coerce-bond-option')
+const getBondActor = require('./bond_modules/get-bond-actor')
 const getRandomFilm = require('./bond_modules/get-random-film')
 const program = require('commander')
 const wordWrap = require('word-wrap')
@@ -29,10 +30,11 @@ getRandomFilm({
   excludeBonds: program.excludeBonds
 })
   .then(film => {
-    const bondActor = wordWrap(`Starring ${film.bondActor} as James Bond`, wordWrapOptions)
+    const bondActor = getBondActor(film.credits.cast)
+    const starring = wordWrap(`Starring ${bondActor} as James Bond`, wordWrapOptions)
     const overview = wordWrap(film.overview, wordWrapOptions)
     const title = wordWrap(film.title, wordWrapOptions)
 
-    console.log(`\n${title}\n\n${bondActor}\n\n${overview}\n`)
+    console.log(`\n${title}\n\n${starring}\n\n${overview}\n`)
   })
   .catch(error => console.error(error))
