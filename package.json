@@ -11,7 +11,7 @@
   "author": "Patrik Csak <patrik@csak.email>",
   "license": "MIT",
   "dependencies": {
-    "commander": "^2.11.0",
+    "commander": "^2.17.1",
     "lodash.random": "^3.2.0",
     "lowdb": "^0.17.2",
     "word-wrap": "^1.2.3"
