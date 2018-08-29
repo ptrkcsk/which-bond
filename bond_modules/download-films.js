@@ -1,5 +1,5 @@
 module.exports = () => new Promise((resolve, reject) => {
-  const {dbPath} = require('./constants')
+  const { dbPath } = require('./constants')
   const getApiKey = require('./get-api-key')
   const low = require('lowdb')
   const FileSync = require('lowdb/adapters/FileSync')

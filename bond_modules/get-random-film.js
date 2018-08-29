@@ -1,5 +1,5 @@
 module.exports = options => new Promise(resolve => {
-  const {projectName, wordWrapOptions} = require('./constants')
+  const { projectName, wordWrapOptions } = require('./constants')
   const filterFilms = require('./filter-films')
   const getFilmsFromDb = require('./db/get-films')
   const random = require('lodash.random')

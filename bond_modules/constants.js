@@ -9,5 +9,5 @@ module.exports = {
   projectName: packageDotJson.name,
   projectRoot: projectRoot,
   projectVersion: packageDotJson.version,
-  wordWrapOptions: {width: 70}
+  wordWrapOptions: { width: 70 }
 }

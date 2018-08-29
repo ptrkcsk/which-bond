@@ -1,5 +1,5 @@
 module.exports = () => new Promise(resolve => {
-  const {wordWrapOptions} = require('./constants')
+  const { wordWrapOptions } = require('./constants')
   const getKeyFromDb = require('./db/get-api-key')
   const readline = require('readline')
   const tmdbGet = require('./tmdb/get')
