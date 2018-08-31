@@ -1,25 +1,29 @@
-module.exports = (path, apiKey) => new Promise((resolve, reject) => {
-  const https = require('https')
+const delay = require('delay')
+const request = require('request-promise-native')
+
+/**
+ * @param {string} path
+ * @param {string} apiKey
+ * @return {Promise<Object>}
+ */
+const get = async (path, apiKey) => {
+  let response
   const url = `https://api.themoviedb.org/3/${path}?api_key=${apiKey}`
 
-  https.get(url, res => {
-    let body = ''
+  try {
+    response = await request(url)
+  } catch (e) {
+    if (e.name === 'StatusCodeError' && e.statusCode === 429) {
+      // Try again in 10 seconds
+      await delay(10 * 1000)
 
-    res.setEncoding('utf8')
-    res.on('data', chunk => {
-      body += chunk
-    })
-    res.on('end', () => {
-      body = JSON.parse(body)
-      if (res.statusCode !== 200) {
-        if (body.status_message) {
-          reject(Error(body.status_message))
-        } else {
-          reject(Error(`${res.statusCode}: ${res.statusMessage}`))
-        }
-      } else {
-        resolve(body)
-      }
-    })
-  })
-})
+      return get(path, apiKey)
+    } else {
+      throw e
+    }
+  }
+
+  return JSON.parse(response)
+}
+
+module.exports = get

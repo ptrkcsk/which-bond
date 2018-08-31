@@ -1,40 +1,38 @@
 #!/usr/bin/env node
 
-const {projectVersion, wordWrapOptions} = require('./bond_modules/constants')
-const coerceBondOption = require('./bond_modules/program/coerce-bond-option')
-const getBondActor = require('./bond_modules/get-bond-actor')
-const getRandomFilm = require('./bond_modules/get-random-film')
 const program = require('commander')
-const wordWrap = require('word-wrap')
+
+const coerceBondOption = require('./bond_modules/program/coerce-bond-option')
+const getRandomFilm = require('./bond_modules/get-random-film')
+const pkg = require('./package.json')
+const wordWrap = require('./bond_modules/word-wrap')
 
 program
-  .version(projectVersion)
+  .name(pkg.name)
+  .version(pkg.version)
   .option(
     '-b, --include-bonds [actors]',
-    'Include one or more Bond actors, by last name. Examples: `-b lazenby`, `-b connery,moore`. Defaults to `all`',
+    'Include one or more Bond actors, by last name. ' +
+    'Examples: `-b lazenby`, `-b connery,moore`.',
     'all'
   )
   .option(
     '-B, --exclude-bonds [actors]',
-    'Exclude one or more Bond actors, by last name. Examples: `-B brosnan`, `-B brosnan,niven`. Defaults to `none`',
+    'Exclude one or more Bond actors, by last name. ' +
+    'Examples: `-B niven`, `-B brosnan,niven`.',
     'none'
   )
   .parse(process.argv)
 
+let { excludeBonds, includeBonds } = program
+
 // Commander doesn't call the coercion function if using the default option value
-program.includeBonds = coerceBondOption(program.includeBonds)
-program.excludeBonds = coerceBondOption(program.excludeBonds)
+excludeBonds = coerceBondOption(excludeBonds)
+includeBonds = coerceBondOption(includeBonds)
 
-getRandomFilm({
-  includeBonds: program.includeBonds,
-  excludeBonds: program.excludeBonds
-})
-  .then(film => {
-    const bondActor = getBondActor(film.credits.cast)
-    const starring = wordWrap(`Starring ${bondActor} as James Bond`, wordWrapOptions)
-    const overview = wordWrap(film.overview, wordWrapOptions)
-    const title = wordWrap(film.title, wordWrapOptions)
+const film = getRandomFilm({ excludeBonds, includeBonds })
+const starring = wordWrap(`Starring ${film.bond} as James Bond`)
+const overview = wordWrap(film.overview)
+const title = wordWrap(film.title) + ` (${film.release_date.substring(0, 4)})`
 
-    console.log(`\n${title}\n\n${starring}\n\n${overview}\n`)
-  })
-  .catch(error => console.error(error))
+console.log(`\n${title}\n\n${starring}\n\n${overview}\n`)

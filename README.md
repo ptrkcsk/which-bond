@@ -7,7 +7,7 @@
 ```
 $ which-bond
 
-  On Her Majesty's Secret Service
+  On Her Majesty's Secret Service (1969)
 
   Starring George Lazenby as James Bond
 
@@ -23,36 +23,42 @@ $ which-bond
 
 ## How to use `which-bond`
 
-### [Install Node.js and npm](https://docs.npmjs.com/getting-started/installing-node)
+There are two ways to use `which-bond`:
 
-### [Get a TMDb API key](https://developers.themoviedb.org/3/getting-started)
+### 1. Install `which-bond` locally:
 
-### Install `which-bond`
+1. [Install Node.js and npm](https://docs.npmjs.com/getting-started/installing-node)
+1. Install `which-bond`:
 
 ```
 $ npm install --global which-bond
-```
-
-*(`which-bond` is a command line tool, hence the [`--global` install](https://docs.npmjs.com/getting-started/installing-npm-packages-globally))*
-
-### Run `which-bond`
-
-```
 $ which-bond
 ```
 
-ℹ️ NOTE: The first time you run `which-bond`, it will download the Bond film data from TMDb and cache it on your computer. The download may take around 30 seconds to complete, but after that `which-bond` will be very fast. Don’t worry, it’s not downloading a ton of data, it’s just spacing out requests to TMDb so as not to go over their [request rate limit](https://developers.themoviedb.org/3/getting-started/request-rate-limiting). You can look at the database yourself when it’s finished. It’s just a JSON file called `.db.json`.
+### 2. Run `which-bond ` without installing (requires Node.js v5.2.0+):
+
+```
+$ npx which-bond
+```
 
 ---
 
-## Options
+## Usage
 
-`which-bond` supports the following command line options:
+Run `which-bond --help` to see supported options:
 
-|Option|Parameter|Examples|Description|
-|---|---|---|---|
-|`-b` or `--include-bonds`|The last name of a single Bond actor or a comma-separated list of last names|- `which-bond -b lazenby`<br>- `which-bond -b connery,moore`|Only choose from films in which Bond was played by one of the specified actors|
-|`-B` or `--exclude-bonds`|The last name of a single Bond actor or a comma-separated list of last names|- `which-bond -B brosnan`|Exclude films in which Bond was played by one of the specified actors|
+```
+$ which-bond --help
+ 
+ Usage: which-bond [options]
+
+ Options:
+
+   -V, --version                 output the version number
+   -b, --include-bonds [actors]  Include one or more Bond actors, by last name. Examples: `-b lazenby`, `-b connery,moore`. (default: all)
+   -B, --exclude-bonds [actors]  Exclude one or more Bond actors, by last name. Examples: `-B niven`, `-B brosnan,niven`. (default: none)
+   -h, --help                    output usage information
+```
 
 ---
 

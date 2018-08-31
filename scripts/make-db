@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+
+const fs = require('fs')
+const path = require('path')
+const tmdbGet = require('../bond_modules/tmdb/get')
+
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
+
+const main = async () => {
+  const apiKey = process.env.TMDB_API_KEY
+  const bondCollection = 'collection/645'
+  const data = {}
+
+  const films = (await tmdbGet(bondCollection, apiKey)).parts
+
+  data.films = films
+    .filter(film => new Date(film.release_date) <= new Date())
+    .map(film => {
+      const { id, overview, release_date, title } = film
+      return { id, overview, release_date, title }
+    })
+
+  for (const film of data.films) {
+    const credits = await tmdbGet(`movie/${film.id}/credits`, apiKey)
+    let bond
+
+    for (const castMember of credits.cast) {
+      if (castMember.character === 'James Bond') {
+        bond = castMember.name
+        break
+      }
+    }
+
+    film.bond = bond
+  }
+
+  fs.writeFileSync(
+    path.resolve(__dirname, '../db.json'),
+    JSON.stringify(data, null, 2)
+  )
+}
+
+main().catch(console.error)
