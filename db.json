@@ -31,20 +31,20 @@
     {
       "id": 660,
       "overview": "A criminal organization has obtained two nuclear bombs and are asking for a 100 million pound ransom in the form of diamonds in seven days or they will use the weapons. The secret service sends James Bond to the Bahamas to once again save the world.",
-      "release_date": "1965-12-16",
+      "release_date": "1965-12-15",
       "title": "Thunderball",
       "bond": "Sean Connery"
     },
     {
       "id": 667,
-      "overview": "A mysterious space craft kidnaps a Russian and American space capsule and brings the world on the verge of another World War. James Bond investigates the case in Japan and meets with his archenemy Blofeld. The fifth film from the legendary James Bond series starring Sean Connery as the British super agent.",
+      "overview": "A mysterious spacecraft captures Russian and American space capsules and brings the two superpowers to the brink of war. James Bond investigates the case in Japan and comes face to face with his archenemy Blofeld.",
       "release_date": "1967-06-12",
       "title": "You Only Live Twice",
       "bond": "Sean Connery"
     },
     {
       "id": 668,
-      "overview": "James Bond tracks archnemesis Ernst Blofeld to a mountaintop retreat where he's training an army of beautiful but lethal women. Along the way, Bond falls for Italian contessa Tracy Draco -- and marries her in order to get closer to Blofeld. Meanwhile, he locates Blofeld in the Alps and embarks on a classic ski chase.",
+      "overview": "James Bond tracks his archnemesis, Ernst Blofeld, to a mountaintop retreat where he is training an army of beautiful, lethal women. Along the way, Bond falls for Italian contessa Tracy Draco, and marries her in order to get closer to Blofeld.",
       "release_date": "1969-12-12",
       "title": "On Her Majesty's Secret Service",
       "bond": "George Lazenby"
@@ -72,7 +72,7 @@
     },
     {
       "id": 698,
-      "overview": "During the transportation of a Space Shuttle a Boeing 747 crashes in the Atlantic Ocean yet when they go to look for the destroyed shuttle it is not there. James Bond investigates the missing mission space shuttle and soon learns that the shuttles owner Hugo Drax wants to kill all of mankind.",
+      "overview": "After Drax Industries' Moonraker space shuttle is hijacked, secret agent James Bond is assigned to investigate, traveling to California to meet the company's owner, the mysterious Hugo Drax. With the help of scientist Dr. Holly Goodhead, Bond soon uncovers Drax's nefarious plans for humanity, all the while fending off an old nemesis, Jaws, and venturing to Venice, Rio, the Amazon...and outer space.",
       "release_date": "1979-06-26",
       "title": "Moonraker",
       "bond": "Roger Moore"
@@ -100,7 +100,7 @@
     },
     {
       "id": 709,
-      "overview": "James Bond and his American colleague Felix Leiter arrest the drug lord Sanchez who succeeds in escaping and takes revenge on Felix and his wife. Bond knows but just one thing: revenge.",
+      "overview": "When drug lord Franz Sanchez exacts his brutal vengeance on Bond's friend Felix Leiter, 007 resigns from the British Secret Service and begins a fierce vendetta against the master criminal. Bond won't be satisfied until Sanchez is defeated, and to accomplish this aim he allies himself with a beautiful pilot and Sanchez's sexy girlfriend.",
       "release_date": "1989-07-07",
       "title": "Licence to Kill",
       "bond": "Timothy Dalton"
@@ -114,7 +114,7 @@
     },
     {
       "id": 714,
-      "overview": "A deranged media mogul is staging international incidents to pit the world's superpowers against each other. Now 007 must take on this evil mastermind in an adrenaline-charged battle to end his reign of terror and prevent global pandemonium.",
+      "overview": "A deranged media mogul is staging international incidents to pit the world’s superpowers against each other. Now 007 must take on this evil mastermind in an adrenaline-charged battle to end his reign of terror and prevent global pandemonium.",
       "release_date": "1997-12-11",
       "title": "Tomorrow Never Dies",
       "bond": "Pierce Brosnan"
@@ -128,14 +128,14 @@
     },
     {
       "id": 36557,
-      "overview": "Le Chiffre, a banker to the world's terrorists, is scheduled to participate in a high-stakes poker game in Montenegro, where he intends to use his winnings to establish his financial grip on the terrorist market. M sends Bond – on his maiden mission as a 00 Agent – to attend this game and prevent Le Chiffre from winning. With the help of Vesper Lynd and Felix Leiter, Bond enters the most important poker game in his already dangerous career.",
+      "overview": "Le Chiffre, a banker to the world's terrorists, is scheduled to participate in a high-stakes poker game in Montenegro, where he intends to use his winnings to establish his financial grip on the terrorist market. M sends Bond—on his maiden mission as a 00 Agent—to attend this game and prevent Le Chiffre from winning. With the help of Vesper Lynd and Felix Leiter, Bond enters the most important poker game in his already dangerous career.",
       "release_date": "2006-11-14",
       "title": "Casino Royale",
       "bond": "Daniel Craig"
     },
     {
       "id": 36643,
-      "overview": "Greed, revenge, world dominance and high-tech terrorism – it's all in a day's work for Bond, who's on a mission to a protect beautiful oil heiress from a notorious terrorist. In a race against time that culminates in a dramatic submarine showdown, Bond works to defuse the international power struggle that has the world's oil supply hanging in the balance.",
+      "overview": "Greed, revenge, world dominance and high-tech terrorism – it's all in a day's work for Bond, who's on a mission to protect a beautiful oil heiress from a notorious terrorist. In a race against time that culminates in a dramatic submarine showdown, Bond works to defuse the international power struggle that has the world's oil supply hanging in the balance.",
       "release_date": "1999-11-17",
       "title": "The World Is Not Enough",
       "bond": "Pierce Brosnan"
@@ -174,13 +174,6 @@
       "release_date": "1983-10-07",
       "title": "Never Say Never Again",
       "bond": "Sean Connery"
-    },
-    {
-      "id": 12208,
-      "overview": "Sir James Bond is called back out of retirement to stop SMERSH. In order to trick SMERSH, James thinks up the ultimate plan - that every agent will be named 'James Bond'. One of the Bonds, whose real name is Evelyn Tremble is sent to take on Le Chiffre in a game of baccarat, but all the Bonds get more than they can handle.",
-      "release_date": "1967-04-13",
-      "title": "Casino Royale",
-      "bond": "David Niven"
     }
   ]
 }
